@@ -1,0 +1,1183 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/build/tailwind.css">
+  </head>
+  <body class="font-glacial text-px18 overflow-x-hidden" data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+    <nav class="p-2 mt-0 w-full z-50 bg-white fixed top-0">
+      <header class="lg:flex lg:justify-between lg:items-center lg:px-4 lg:py-3 lg:mx-16 mx-2" x-data="{ isOpen: false }" @keydown.escape="isOpen = false">
+        <div class="flex items-center justify-between lg:px-3 py-4 lg:p-0">
+          <div>
+            <a href="https://www.findmydirectdoctor.com/">
+              <img alt="Find my Direct Doctor" class="h-12" src="/images/logo.png">
+            </a>
+          </div>
+          <button id="userButton" type="button" class="block lg:hidden hover:text-doctor-yellow focus:text-doctor-yellow focus:outline-none" @click="isOpen = !isOpen" :class="{ 'transition transform-180': isOpen }">
+            <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" style="display: none;"></path>
+              <path x-show="!isOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="userMenu" class="px-0 lg:px-4 pt-2 pb-4 lg:flex lg:p-0 lg:items-center lg:justify-center hidden" :class="{ 'block shadow-2xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show.transition="true">
+          <div class="lg:flex lg:show hidden">
+            <a href="#" class="block text-gray-800 font-semibold hover:text-doctor-yellow">
+              Direct Doctor Directory
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline w-5">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </a>
+            <div class="hoverable">
+              <a href="https://www.findmydirectdoctor.com/blogs" class="block text-gray-800 font-semibold hover:text-doctor-yellow sm:mt-0 sm:ml-4">
+                Free Articles
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline w-5">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </a>
+              <div class="rounded-lg shadow-2xl absolute overflow-auto z-30 profile-menu px-4 py-2 bg-white">
+                <ul class="list-reset">
+                </ul>
+              </div>
+            </div>
+            <a href="#" class="block text-gray-800 font-semibold hover:text-doctor-yellow sm:mt-0 sm:ml-4">
+              Quiz
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline w-5">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="lg:hidden show">
+            <div class="border-t">
+              <a class="block text-gray-800 font-semibold hover:text-doctor-yellow border-b px-4 py-4">
+                Direct Doctor Directory
+                <span class="float-right">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline w-5">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div x-data="{ isOpen: false }">
+              <a class="block text-gray-800 font-semibold hover:text-doctor-yellow border-b px-4 py-4" @click=" isOpen = !isOpen">
+                Free Articles
+                <span class="float-right">
+                  <svg :class="{ 'hidden' : isOpen }" viewBox="0 0 20 20" fill="currentColor" class="inline w-5 transform">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                  <svg :class="{ 'hidden' : !isOpen }" viewBox="0 0 20 20" fill="currentColor" class="inline w-5 transform hidden">
+                    <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </a>
+              <div class="bg-gray-200 border-l-4 border-doctor-yellow" x-show="isOpen" style="display: none;">
+                <ul class="list-reset list-outside">
+                </ul>
+              </div>
+            </div>
+            <div class="border-b">
+              <a class="block text-gray-800 font-semibold hover:text-doctor-yellow px-4 py-4">
+                Quiz
+                <span class="float-right">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline w-5">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="px-3 lg:px-0">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4V_CNAPGLCwvx8TENP_XzfrvG28_0Ye5CG4JHt4ClxTl2Zw/viewform" target="_blank" class="block text-gray-800 border rounded-lg px-6 py-1 border-doctor-yellow lg:ml-4 hover:bg-doctor-yellow hover:text-gray-100 mt-3 lg:mt-0">
+              List your practice
+            </a>
+          </div>
+          <div class="px-3 lg:px-0">
+            <a href="/users/sign_in" class="block text-gray-800 border rounded-lg px-6 py-1 border-doctor-yellow lg:ml-4 hover:bg-doctor-yellow hover:text-gray-100 mt-3 lg:mt-0">
+              Login
+            </a>
+          </div>
+        </div>
+      </header>
+    </nav>
+    <div class="absolute top-0">
+      <div class="absolute">
+        <img class="w-16 h-64" src="/images/light_gray_round_edges.svg">
+      </div>
+      <div class="top-0 px-12">
+        <img class="w-40" src="/images/light_gray_lines_horizontal.svg">
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="lg:grid lg:w-full lg:mt-24 lg:grid-cols-12 flex mt-32">
+        <div class="lg:mt-32 lg:col-span-1">
+        </div>
+        <div class="lg:col-span-11 flex mt-4 relative -ml-4">
+          <div class="w-full">
+            <!-- component -->
+            <nav aria-label="Breadcrumb" class="text-sm">
+              <ul class="list-none p-0 inline-flex">
+                <li class="flex items-left">
+                  <a href="#" class="text-doctor-yellow pr-2">Home</a>
+                  <span class="text-gray-500 pr-2">&gt;</span>
+                </li>
+                <li class="flex items-left">
+                  <a href="#" class="text-doctor-yellow pr-2">Find a doctor</a>
+                  <span class="text-gray-500 pr-2">&gt;</span>
+                </li>
+                <li class="text-gray-500" aria-current="page">
+                  State
+                </li>
+              </ul>
+            </nav>
+            <div class="w-full text-left">
+              <h1 class="font-hurmebold text-md inline-block" id="near-location">New York</h1>
+              <span class="text-gray-600">(62 results)</span>
+            </div>
+            <div class="lg:w-full flex mt-4">
+              <div class="lg:w-2/12">
+                <form data-controller="filter" data-target="filter.form" action="/search-map" accept-charset="UTF-8" method="get">
+                  <div class="w-full mt-2">
+                    <span class="border border-gray-400 font-hurmebold text-sm tracking-wide p-1 rounded">Filter by</span>
+                  </div>
+                  <div class="w-full border-r pr-4 border-gray-200">
+                    <div class="w-full mt-4 border-b pb-6 text-sm  border-gray-200">
+                      <label class="tracking-wide font-hurmebold">Specialist</label>
+                      <div class="relative mt-1">
+                        <select name="speciality" id="speciality" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline text-gray-600"><option value="all">All</option>
+                          <option value="CAC">Concierge Acupuncture</option>
+                          <option value="CAL">Concierge Allergy</option>
+                          <option value="CAN">Conciege Anesthesiology</option>
+                          <option value="CAY">Concierge Ayurveda</option>
+                          <option value="CC">Concierge Cardiology</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+                          <svg class="fill-current h-4 w-4  text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm border-gray-200">
+                      <label class="tracking-wide font-hurmebold">Patient Reviwes</label>
+                      <div class="mt-2 w-full">
+                        <div class="inline-flex items-center">
+                          <input type="radio" name="rating" id="rating_5" value="5">
+                          <label for="rating_5">
+                            <div class="flex items-center ml-1">
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="inline-flex items-center">
+                          <input type="radio" name="rating" id="rating_4" value="4">
+                          <label for="rating_4">
+                            <div class="flex items-center ml-1 mr-1">
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                            </div>
+                          </label>
+                          &amp; up
+                        </div>
+                        <div class="inline-flex items-center">
+                          <input type="radio" name="rating" id="rating_3" value="3">
+                          <label for="rating_3">
+                            <div class="flex items-center ml-1 mr-1">
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                            </div>
+                          </label>
+                          &amp; up
+                        </div>
+                        <div class="inline-flex items-center">
+                          <input type="radio" name="rating" id="rating_2" value="2">
+                          <label for="rating_2">
+                            <div class="flex items-center ml-1 mr-1">
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                            </div>
+                          </label>
+                          &amp; up
+                        </div>
+                        <div class="inline-flex items-center">
+                          <input type="radio" name="rating" id="rating_1" value="1">
+                          <label for="rating_1">
+                            <div class="flex items-center ml-1 mr-1">
+                              <svg class="w-4 h-4 fill-current text-doctor-yellow" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                              <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                </path></svg>
+                            </div>
+                          </label>
+                          &amp; up
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm  border-gray-200">
+                      <label class="tracking-wide font-hurmebold">Practice Type</label>
+                      <div class="mt-2">
+                        <div class="w-full flex">
+                          <div class="w-3/4">
+                            <label for="practice_type_dpc">DPC Doctor</label>
+                          </div>
+                          <div class="w-1/4">
+                            <input type="radio" name="practice_type" id="practice_type_dpc" value="dpc" class="form-radio">
+                          </div>
+                        </div>
+                        <div class="w-full flex mt-1">
+                          <div class="w-3/4">
+                            <label for="practice_type_concierge">Concierge Doctor</label>
+                          </div>
+                          <div class="w-1/4">
+                            <input type="radio" name="practice_type" id="practice_type_concierge" value="concierge" class="form-radio">
+                          </div>
+                        </div>
+                        <div class="w-full flex mt-1">
+                          <div class="w-3/4">
+                            <label for="practice_type_both">Both</label>
+                          </div>
+                          <div class="w-1/4">
+                            <input type="radio" name="practice_type" id="practice_type_both" value="both" class="form-radio">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm  border-gray-200">
+                      <label class="tracking-wide font-hurmebold">FMDD Rating</label>
+                      <div class="mt-2">
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm">
+                      <label class="tracking-wide font-hurmebold">Years in Experience</label>
+                      <div class="mt-2  text-gray-600">
+                        <div class="grid gap-1 grid-cols-2">
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="experience" id="experience_0_5" value="0_5">
+                            <label for="experience_0_5">0-5 Years</label>
+                          </div>
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="experience" id="experience_6_10" value="6_10">
+                            <label for="experience_6_10">6-10 Years</label>
+                          </div>
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="experience" id="experience_11_20" value="11_20">
+                            <label for="experience_11_20">11-20 Years</label>
+                          </div>
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="experience" id="experience_gt_20" value="gt_20">
+                            <label for="experience_gt_20">&gt; 20 Years</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm  border-gray-200">
+                      <label class="tracking-wide font-hurmebold">Monthly Membership Fee</label>
+                      <div class="mt-2  text-gray-600">
+                        <div class="grid gap-1 grid-cols-2">
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="price" id="price_25_100" value="25_100">
+                            <label for="price_25_100">$25-100</label>
+                          </div>
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="price" id="price_101_250" value="101_250">
+                            <label for="price_101_250">$101-250</label>
+                          </div>
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="price" id="price_250_500" value="250_500">
+                            <label for="price_250_500">$250-500</label>
+                          </div>
+                          <div class="filter-checkbox-button">
+                            <input type="checkbox" name="price" id="price_gt_500" value="gt_500">
+                            <label for="price_gt_500">&gt; $500</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm  border-gray-200">
+                      <div class="mt-2 w-full flex">
+                        <div class="w-3/4">
+                          <label class="tracking-wide font-hurmebold pr-2">Holistic Medicine</label>
+                        </div>
+                        <div class="w-1/4">
+                          <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="holistic_medicine" id="holistic_medicine" value="yes" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none">
+                            <label for="holistic_medicine" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 border-b pb-6 text-sm border-gray-200">
+                      <div class="mt-2 w-full flex">
+                        <div class="w-3/4">
+                          <label class="tracking-wide font-hurmebold pr-6">Telehealth</label>
+                        </div>
+                        <div class="w-1/4">
+                          <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="telehealth" id="telehealth" value="yes" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none">
+                            <label for="telehealth" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full mt-4 pb-6 text-sm">
+                      <div class="mt-2 w-full flex">
+                        <div class="w-3/4">
+                          <label class="tracking-wide font-hurmebold pr-2">Lifestyle Medicine</label>
+                        </div>
+                        <div class="w-1/4">
+                          <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="life_style_medicine" id="life_style_medicine" value="yes" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none">
+                            <label for="life_style_medicine" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="lg:w-10/12 ml-3 text-sm">
+                <div class="w-full flex">
+                  <div class="w-8/12 text-right pr-6">
+                    <label class="text-sm">Sort by:</label>
+                    <div class="inline-block relative text-sm mt-1">
+                      <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-1 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline  text-gray-600">
+                        <option>Best Match</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                      </select>
+                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-4/12">
+                    <div class="w-full text-center">
+                      <span class="mr-2">Map</span>
+                      <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                        <input type="checkbox" name="map_toggle" id="map_toggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none" checked="">
+                        <label for="map_toggle" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full flex mt-6">
+                  <div class="lg:w-8/12">
+                    <div class="w-full" id="result-container" data-controller="modal">
+                      <div id="doc-451" class=" pr-1 doctor-card w-full box-bottom-shadow " data-name="Sarah Mildred Gamble" data-price="$0 - 0" data-rating="4" data-image="/packs/media/images/doctor_PNG15987-aba224dcff05fdc94c0ce872654ed37c.png">
+                        <div class="w-full mt-6 flex">
+                          <div class="w-40">
+                            <img alt="Sarah Mildred Gamble - 222 Railroad Avenue, Greenwich, Connecticut, 6830" class="h-40 w-full object-cover border rounded-lg doc-avatar" src="/images/doctor_default.svg">
+                            <div class="text-md tracking-wide font-hurmebold mt-4 text-center">
+                              Greenwich Pure Medical
+                            </div>
+                          </div>
+                          <div class="w-full">
+                            <div class="w-full flex items-start">
+                              <div class="w-4/12 pl-4">
+                                <div class="tracking-wide font-hurmebold">
+                                  <a href="#" target="_blank" class="hover:text-doctor-yellow focus:outline-none">
+                                    <h2 class="text-2xl">Sarah Mildred Gamble</h2>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex">
+                                  <a class="border-doctor-yellow rounded-lg px-2 bg-doctor-yellow text-white cursor-pointer hover:bg-doctor-yellow pt-1" href="#" target="_blank">
+                                    Book Appointment
+                                  </a>
+                                  <div class="pl-2 flex items-center">
+                                    <a href="#" class="flex items-center justify-center">
+                                      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 642.000000 533.000000" preserveAspectRatio="xMidYMid meet" fill="currentColor" class="text-gray-600 hover:text-green-500 transition duration-300 transform hover:scale-125" stroke="none">
+                                        <g transform="translate(0.000000,533.000000) scale(0.100000,-0.100000)">
+                                          <path d="M1790 5103 c-86 -10 -290 -57 -378 -88 -225 -78 -399 -176 -592 -329
+                            -214 -171 -363 -361 -489 -620 -120 -247 -170 -459 -178 -756 -13 -458 94
+                            -802 383 -1231 408 -607 846 -1051 1406 -1427 294 -197 587 -340 953 -465
+                            l150 -51 185 1 185 1 150 50 c571 191 1043 474 1540 923 312 282 709 766 920
+                            1124 105 179 203 431 243 630 60 292 55 616 -13 885 -134 536 -567 1016 -1113
+                            1236 -206 83 -428 124 -679 124 -440 0 -794 -119 -1185 -400 l-48 -34 -32 24
+                            c-285 210 -604 343 -950 395 -90 14 -364 18 -458 8z m435 -367 c316 -49 581
+                            -179 835 -411 93 -85 129 -105 190 -105 63 0 104 23 193 107 181 173 367 287
+                            582 357 144 47 212 58 405 63 163 5 200 3 298 -16 319 -61 603 -222 838 -474
+                            90 -97 149 -184 215 -315 57 -113 80 -180 111 -317 20 -86 23 -129 23 -310 0
+                            -183 -3 -225 -24 -325 -52 -249 -146 -469 -298 -693 -461 -680 -1032 -1202
+                            -1663 -1517 -268 -134 -550 -238 -672 -247 -72 -6 -156 12 -318 69 -505 177
+                            -1016 506 -1434 923 -430 428 -803 957 -909 1290 -99 308 -99 657 0 945 35
+                            102 120 270 181 355 215 305 562 533 927 610 132 28 375 33 520 11z"></path>
+                                        </g>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                  <div class="pl-2 flex items-center" data-action="click->modal#modalOpen" data-modal="share_modal_451">
+                                    <a class="flex items-center justify-center cursor-pointer">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-gray-700 hover:text-green-500 transition duration-300 transform hover:scale-125" data-modal="share_modal_451">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start">
+                              <div class="w-4/12 pl-4">
+                                <div class="mt-2">Concierge Internal Medicine</div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="mt-2">Concierge</div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="mt-2">0 years experience</div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-2">
+                              <div class="w-4/12 pl-4">
+                                <div class="w-full flex">
+                                  <div class="flex items-center doc-rating">
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                  </div>
+                                  <div class="text-sm">
+                                    <a href="#" class="text-blue-500"> (0 Reviews)</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">
+                                  Fee $0 - $0
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">FMDD Score: 0/10</div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-1">
+                              <div class="w-4/12 pl-4">
+                                <div class="text-base text-gray-600">
+                                  Max no. of Patients: 0
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">Apt:
+                                  Not Available
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Free Consultation - Pending</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-1">
+                              <div class="w-4/12 pl-4">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Telehealth - Pending</div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Home Visit - Pending</div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Holistic/Lifestyle Med - Pending</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-full flex pb-6 ">
+                          <div class="w-40">
+                            <!--<div class="text-md tracking-wide font-hurmebold mt-4 text-center">
+            Greenwich Pure Medical
+          </div>-->
+                          </div>
+                          <div class="w-full flex pl-4">
+                            <div class="w-4/12">
+                              <div class="w-full flex mt-4 text-base justify-center">
+                                <div class="pr-2"><img class="w-5 h-5 pt-1" src="/images/icons/email.svg"></div>
+                                <a href="#" class="hover:underline hover:text-blue-400">
+                                  <div>Message</div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="w-full flex mt-4 text-base">
+                                <div class=" -ml-4 mr-4"><img class="w-2 h-8" src="/images/vertical_side_shadow_for_big_box.svg"></div>
+                                <div class="pr-2"><img class="w-5 h-5 pt-1" src="/images/icons/phone.svg"></div>
+                                <a href="#" class="hover:underline hover:text-blue-400 w-full">
+                                  <div>203.869.2800</div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <a href="#" target="_blank" class="hover:underline hover:text-blue-400">
+                                <div class="w-full flex mt-4 text-base">
+                                  <div class=" -ml-4 mr-4"><img class="w-2 h-8" src="/images/vertical_side_shadow_for_big_box.svg"></div>
+                                  <div><img class="w-5 h-5 pt-1" src="/images/icons/web.svg"></div>
+                                  <div>
+                                    Website
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="doc-451" class=" pr-1 doctor-card w-full box-bottom-shadow " data-name="Sarah Mildred Gamble" data-price="$0 - 0" data-rating="4" data-image="/packs/media/images/doctor_PNG15987-aba224dcff05fdc94c0ce872654ed37c.png">
+                        <div class="w-full mt-6 flex">
+                          <div class="w-40">
+                            <img alt="Sarah Mildred Gamble - 222 Railroad Avenue, Greenwich, Connecticut, 6830" class="h-40 w-full object-cover border rounded-lg doc-avatar" src="/images/doctor_default.svg">
+                            <div class="text-md tracking-wide font-hurmebold mt-4 text-center">
+                              Greenwich Pure Medical
+                            </div>
+                          </div>
+                          <div class="w-full">
+                            <div class="w-full flex items-start">
+                              <div class="w-4/12 pl-4">
+                                <div class="tracking-wide font-hurmebold">
+                                  <a href="#" target="_blank" class="hover:text-doctor-yellow focus:outline-none">
+                                    <h2 class="text-2xl">Sarah Mildred Gamble</h2>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex">
+                                  <a class="border-doctor-yellow rounded-lg px-2 bg-doctor-yellow text-white cursor-pointer hover:bg-doctor-yellow pt-1" href="#" target="_blank">
+                                    Book Appointment
+                                  </a>
+                                  <div class="pl-2 flex items-center">
+                                    <a href="#" class="flex items-center justify-center">
+                                      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 642.000000 533.000000" preserveAspectRatio="xMidYMid meet" fill="currentColor" class="text-gray-600 hover:text-green-500 transition duration-300 transform hover:scale-125" stroke="none">
+                                        <g transform="translate(0.000000,533.000000) scale(0.100000,-0.100000)">
+                                          <path d="M1790 5103 c-86 -10 -290 -57 -378 -88 -225 -78 -399 -176 -592 -329
+                            -214 -171 -363 -361 -489 -620 -120 -247 -170 -459 -178 -756 -13 -458 94
+                            -802 383 -1231 408 -607 846 -1051 1406 -1427 294 -197 587 -340 953 -465
+                            l150 -51 185 1 185 1 150 50 c571 191 1043 474 1540 923 312 282 709 766 920
+                            1124 105 179 203 431 243 630 60 292 55 616 -13 885 -134 536 -567 1016 -1113
+                            1236 -206 83 -428 124 -679 124 -440 0 -794 -119 -1185 -400 l-48 -34 -32 24
+                            c-285 210 -604 343 -950 395 -90 14 -364 18 -458 8z m435 -367 c316 -49 581
+                            -179 835 -411 93 -85 129 -105 190 -105 63 0 104 23 193 107 181 173 367 287
+                            582 357 144 47 212 58 405 63 163 5 200 3 298 -16 319 -61 603 -222 838 -474
+                            90 -97 149 -184 215 -315 57 -113 80 -180 111 -317 20 -86 23 -129 23 -310 0
+                            -183 -3 -225 -24 -325 -52 -249 -146 -469 -298 -693 -461 -680 -1032 -1202
+                            -1663 -1517 -268 -134 -550 -238 -672 -247 -72 -6 -156 12 -318 69 -505 177
+                            -1016 506 -1434 923 -430 428 -803 957 -909 1290 -99 308 -99 657 0 945 35
+                            102 120 270 181 355 215 305 562 533 927 610 132 28 375 33 520 11z"></path>
+                                        </g>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                  <div class="pl-2 flex items-center" data-action="click->modal#modalOpen" data-modal="share_modal_451">
+                                    <a class="flex items-center justify-center cursor-pointer">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-gray-700 hover:text-green-500 transition duration-300 transform hover:scale-125" data-modal="share_modal_451">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start">
+                              <div class="w-4/12 pl-4">
+                                <div class="mt-2">Concierge Internal Medicine</div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="mt-2">Concierge</div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="mt-2">0 years experience</div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-2">
+                              <div class="w-4/12 pl-4">
+                                <div class="w-full flex">
+                                  <div class="flex items-center doc-rating">
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                  </div>
+                                  <div class="text-sm">
+                                    <a href="#" class="text-blue-500"> (0 Reviews)</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">
+                                  Fee $0 - $0
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">FMDD Score: 0/10</div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-1">
+                              <div class="w-4/12 pl-4">
+                                <div class="text-base text-gray-600">
+                                  Max no. of Patients: 0
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">Apt:
+                                  Not Available
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Free Consultation - Pending</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-1">
+                              <div class="w-4/12 pl-4">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Telehealth - Pending</div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Home Visit - Pending</div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Holistic/Lifestyle Med - Pending</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-full flex pb-6 ">
+                          <div class="w-40">
+                            <!--<div class="text-md tracking-wide font-hurmebold mt-4 text-center">
+            Greenwich Pure Medical
+          </div>-->
+                          </div>
+                          <div class="w-full flex pl-4">
+                            <div class="w-4/12">
+                              <div class="w-full flex mt-4 text-base justify-center">
+                                <div class="pr-2"><img class="w-5 h-5 pt-1" src="/images/icons/email.svg"></div>
+                                <a href="#" class="hover:underline hover:text-blue-400">
+                                  <div>Message</div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="w-full flex mt-4 text-base">
+                                <div class=" -ml-4 mr-4"><img class="w-2 h-8" src="/images/vertical_side_shadow_for_big_box.svg"></div>
+                                <div class="pr-2"><img class="w-5 h-5 pt-1" src="/images/icons/phone.svg"></div>
+                                <a href="#" class="hover:underline hover:text-blue-400 w-full">
+                                  <div>203.869.2800</div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <a href="#" target="_blank" class="hover:underline hover:text-blue-400">
+                                <div class="w-full flex mt-4 text-base">
+                                  <div class=" -ml-4 mr-4"><img class="w-2 h-8" src="/images/vertical_side_shadow_for_big_box.svg"></div>
+                                  <div><img class="w-5 h-5 pt-1" src="/images/icons/web.svg"></div>
+                                  <div>
+                                    Website
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="doc-451" class=" pr-1 doctor-card w-full box-bottom-shadow " data-name="Sarah Mildred Gamble" data-price="$0 - 0" data-rating="4" data-image="/packs/media/images/doctor_PNG15987-aba224dcff05fdc94c0ce872654ed37c.png">
+                        <div class="w-full mt-6 flex">
+                          <div class="w-40">
+                            <img alt="Sarah Mildred Gamble - 222 Railroad Avenue, Greenwich, Connecticut, 6830" class="h-40 w-full object-cover border rounded-lg doc-avatar" src="/images/doctor_default.svg">
+                            <div class="text-md tracking-wide font-hurmebold mt-4 text-center">
+                              Greenwich Pure Medical
+                            </div>
+                          </div>
+                          <div class="w-full">
+                            <div class="w-full flex items-start">
+                              <div class="w-4/12 pl-4">
+                                <div class="tracking-wide font-hurmebold">
+                                  <a href="#" target="_blank" class="hover:text-doctor-yellow focus:outline-none">
+                                    <h2 class="text-2xl">Sarah Mildred Gamble</h2>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex">
+                                  <a class="border-doctor-yellow rounded-lg px-2 bg-doctor-yellow text-white cursor-pointer hover:bg-doctor-yellow pt-1" href="#" target="_blank">
+                                    Book Appointment
+                                  </a>
+                                  <div class="pl-2 flex items-center">
+                                    <a href="#" class="flex items-center justify-center">
+                                      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 642.000000 533.000000" preserveAspectRatio="xMidYMid meet" fill="currentColor" class="text-gray-600 hover:text-green-500 transition duration-300 transform hover:scale-125" stroke="none">
+                                        <g transform="translate(0.000000,533.000000) scale(0.100000,-0.100000)">
+                                          <path d="M1790 5103 c-86 -10 -290 -57 -378 -88 -225 -78 -399 -176 -592 -329
+                            -214 -171 -363 -361 -489 -620 -120 -247 -170 -459 -178 -756 -13 -458 94
+                            -802 383 -1231 408 -607 846 -1051 1406 -1427 294 -197 587 -340 953 -465
+                            l150 -51 185 1 185 1 150 50 c571 191 1043 474 1540 923 312 282 709 766 920
+                            1124 105 179 203 431 243 630 60 292 55 616 -13 885 -134 536 -567 1016 -1113
+                            1236 -206 83 -428 124 -679 124 -440 0 -794 -119 -1185 -400 l-48 -34 -32 24
+                            c-285 210 -604 343 -950 395 -90 14 -364 18 -458 8z m435 -367 c316 -49 581
+                            -179 835 -411 93 -85 129 -105 190 -105 63 0 104 23 193 107 181 173 367 287
+                            582 357 144 47 212 58 405 63 163 5 200 3 298 -16 319 -61 603 -222 838 -474
+                            90 -97 149 -184 215 -315 57 -113 80 -180 111 -317 20 -86 23 -129 23 -310 0
+                            -183 -3 -225 -24 -325 -52 -249 -146 -469 -298 -693 -461 -680 -1032 -1202
+                            -1663 -1517 -268 -134 -550 -238 -672 -247 -72 -6 -156 12 -318 69 -505 177
+                            -1016 506 -1434 923 -430 428 -803 957 -909 1290 -99 308 -99 657 0 945 35
+                            102 120 270 181 355 215 305 562 533 927 610 132 28 375 33 520 11z"></path>
+                                        </g>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                  <div class="pl-2 flex items-center" data-action="click->modal#modalOpen" data-modal="share_modal_451">
+                                    <a class="flex items-center justify-center cursor-pointer">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-gray-700 hover:text-green-500 transition duration-300 transform hover:scale-125" data-modal="share_modal_451">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start">
+                              <div class="w-4/12 pl-4">
+                                <div class="mt-2">Concierge Internal Medicine</div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="mt-2">Concierge</div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="mt-2">0 years experience</div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-2">
+                              <div class="w-4/12 pl-4">
+                                <div class="w-full flex">
+                                  <div class="flex items-center doc-rating">
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 20 20">
+                                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                                      </path>
+                                    </svg>
+                                  </div>
+                                  <div class="text-sm">
+                                    <a href="#" class="text-blue-500"> (0 Reviews)</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">
+                                  Fee $0 - $0
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">FMDD Score: 0/10</div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-1">
+                              <div class="w-4/12 pl-4">
+                                <div class="text-base text-gray-600">
+                                  Max no. of Patients: 0
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="text-base text-gray-600">Apt:
+                                  Not Available
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Free Consultation - Pending</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full flex items-start mt-1">
+                              <div class="w-4/12 pl-4">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Telehealth - Pending</div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Home Visit - Pending</div>
+                                </div>
+                              </div>
+                              <div class="w-4/12 pl-2">
+                                <div class="w-full flex text-base text-gray-600 -ml-1">
+                                  <div class="pt-1">
+                                    <div class="flex items-center ">
+                                      <img src="images/badge.svg">
+                                    </div>
+                                  </div>
+                                  <div class="pl-2">Holistic/Lifestyle Med - Pending</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-full flex pb-6 ">
+                          <div class="w-40">
+                            <!--<div class="text-md tracking-wide font-hurmebold mt-4 text-center">
+            Greenwich Pure Medical
+          </div>-->
+                          </div>
+                          <div class="w-full flex pl-4">
+                            <div class="w-4/12">
+                              <div class="w-full flex mt-4 text-base justify-center">
+                                <div class="pr-2"><img class="w-5 h-5 pt-1" src="/images/icons/email.svg"></div>
+                                <a href="#" class="hover:underline hover:text-blue-400">
+                                  <div>Message</div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <div class="w-full flex mt-4 text-base">
+                                <div class=" -ml-4 mr-4"><img class="w-2 h-8" src="/images/vertical_side_shadow_for_big_box.svg"></div>
+                                <div class="pr-2"><img class="w-5 h-5 pt-1" src="/images/icons/phone.svg"></div>
+                                <a href="#" class="hover:underline hover:text-blue-400 w-full">
+                                  <div>203.869.2800</div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="w-4/12">
+                              <a href="#" target="_blank" class="hover:underline hover:text-blue-400">
+                                <div class="w-full flex mt-4 text-base">
+                                  <div class=" -ml-4 mr-4"><img class="w-2 h-8" src="/images/vertical_side_shadow_for_big_box.svg"></div>
+                                  <div><img class="w-5 h-5 pt-1" src="/images/icons/web.svg"></div>
+                                  <div>
+                                    Website
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full text-center mt-12" id="pagination-container" data-controller="pagination" data-target="pagination.container" data-pagination-url="search-map.json">
+                      <nav class="pagy-nav pagination" role="navigation" aria-label="pager"><span class="page prev disabled">‹&nbsp;Prev</span> <span class="page active">1</span> <span class="page"><a href="/search-map?near=40.7127%2C-74.006&amp;place=New+York&amp;page=2" rel="next">2</a></span> <span class="page"><a href="/search-map?near=40.7127%2C-74.006&amp;place=New+York&amp;page=3">3</a></span> <span class="page"><a href="/search-map?near=40.7127%2C-74.006&amp;place=New+York&amp;page=4">4</a></span> <span class="page next"><a href="/search-map?near=40.7127%2C-74.006&amp;place=New+York&amp;page=2" rel="next" aria-label="next">Next&nbsp;›</a></span></nav>
+                    </div>
+                  </div>
+                  <div class="lg:w-4/12 ml-4 map-container" data-controller="maps" data-maps-defaultlocation="13.6355,79.4199" data-maps-distance="120.40032075924957" data-maps-pins="41.0215,-73.6287,$0 - 0,451|41.075,-73.68,$0 - 0,431|41.075,-73.68,$0 - 0,433|41.075,-73.68,$0 - 0,434|41.075,-73.68,$0 - 0,432|41.1122,-73.5415,$0 - 0,441|41.0834,-73.4613,$0 - 0,443|41.1442,-73.4986,$0 - 0,450|41.1634,-73.4132,$0 - 0,429|41.1634,-73.4132,$0 - 0,430|41.1357,-73.3716,$0 - 0,438|41.1357,-73.3716,$0 - 0,435|41.1357,-73.3716,$0 - 0,437|41.1357,-73.3716,$0 - 0,436|41.2839,-73.492,$0 - 0,446|41.215,-73.0391,$0 - 0,449|41.215,-73.0391,$0 - 0,447|41.215,-73.0391,$0 - 0,448|41.2339,-73.0425,$0 - 0,444|41.4012,-72.8977,$0 - 0,452">
+                    <div id="map" class="google-map rounded-lg" style="position: relative; overflow: hidden;">
+                      <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+                        <div class="gm-err-container">
+                          <div class="gm-err-content">
+                            <div class="gm-err-icon"><img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;"></div>
+                            <div class="gm-err-title">Oops! Something went wrong.</div>
+                            <div class="gm-err-message">This page didn't load Google Maps correctly. See the JavaScript console for technical details.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="lg:grid lg:w-full mt-24 grid-cols-12 relative z-20">
+      <div class="col-span-10 col-start-2">
+        <div class="lg:flex lg:w-full lg:mt-8 lg:justify-center">
+          <div class="w-full lg:w-3/4 border rounded-2lg shadow-2xl relative -mb-20 -mt-12 bg-white">
+            <div class="px-8 pt-2 pb-4 md:pt-0">
+              <label class="text-doctor-blue text-lg font-hurmebold">
+                Subscribe for our newsletter
+              </label>
+              <div class="flex justify-between items-center subscribe-bg-gray rounded-lg mt-3">
+                <div class="flex justify-center items-center w-full">
+                  <label class="ml-3 mr-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-5 text-gray-600" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                  </label>
+                  <input class="my-4 w-full focus:outline-none subscribe-bg-gray" type="text" name="" placeholder="Enter your Email">
+                </div>
+                <div>
+                  <button class="bg-doctor-yellow text-gray-100 mr-4 rounded-md md:px-8 px-4 py-2 shadow">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="grid grid-cols-12 bg-doctor-blue rounded-tl-lg rounded-tr-lg tracking-wider relative z-10">
+      <div class="flex flex-wrap col-start-2 col-span-10">
+        <footer class="pt-20 w-full lg:mx-24">
+          <div class="flex w-full mt-20 mb-8 lg:ml-8">
+            <img class="h-8" src="/images/logo_white.png">
+          </div>
+          <div class="lg:flex w-full text-gray-100 text-sm justify-between lg:ml-8">
+            <div class="lg:w-3/12 w-full">
+              <div class="text-xl font-hurmebold">
+                Resources
+              </div>
+              <div class="mt-4">
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>About Find My Direct Doctor</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Review your DPC/Concierge Doctor</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Patient Resources</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Concierge Doctor Resources</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Rating</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Contact Us</a>
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-3/12 lg:pl-10 w-full mt-4">
+              <div class="text-xl font-hurmebold">
+                Business
+              </div>
+              <div class="mt-4">
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Advertise with us</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Media kit</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Sponser Physician Profile</a>
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-3/12 lg:pl-10 w-full mt-4">
+              <div class="text-xl font-hurmebold">
+                Legal
+              </div>
+              <div class="mt-4">
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Terms and Conditions</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Privacy Policy</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Cookie Policy</a>
+                </div>
+                <div class="hover:text-gray-400 cursor-pointer">
+                  <a>Acceptable Use Policy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:pl-10">
+            <div class="mt-12 w-full">
+              <div class="w-6 inline-block">
+                <a href="https://www.facebook.com/Find-My-Direct-Doctor-103928951413548/" target="_blank">
+                  <img class="w-3" src="/images/icons/facebook_white.svg">
+                </a>
+              </div>
+              <div class="w-8 inline-block">
+                <img class="w-6" src="/images/icons/instagram_white.svg">
+              </div>
+              <div class="w-8 inline-block">
+                <a href="https://www.linkedin.com/company/findmydirectdoctor/" target="_blank">
+                  <img class="w-6 ml-2" src="/images/icons/linkedin_white.svg">
+                </a>
+              </div>
+              <div class="w-8 inline-block">
+                <a href="https://twitter.com/FindMyDirectDoc" target="_blank">
+                  <img class="w-6 ml-2" src="/images/icons/twitter_white.svg">
+                </a>
+              </div>
+            </div>
+            <div class="my-6 flex w-full text-xs text-gray-400">
+              All Rights Reserved 2020
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </body>
+</html>
